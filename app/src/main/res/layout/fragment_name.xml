@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorMainBack"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -11,68 +12,71 @@
         android:id="@+id/tvAppName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="@dimen/marginFromCard"
         android:gravity="center"
-        android:text="QuizApp"
-        android:textSize="25sp"
+        android:text="@string/flags_quiz"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textAppName"
         android:textStyle="bold" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@android:color/white"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="5dp">
+        android:layout_marginHorizontal="@dimen/standardMargin"
+        app:cardCornerRadius="@dimen/cornerDimen"
+        app:cardElevation="@dimen/cornerDimen">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorCardBack"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="@dimen/standardMargin">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Welcome"
-                android:textColor="#363a43"
-                android:textSize="30sp"
+                android:text="@string/welcome"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textAppName"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Please enter your name"
-                android:textColor="#7a8089"
-                android:textSize="16sp" />
+                android:text="@string/please_enter_your_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/standardSize" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="@dimen/standardMargin"
+                android:textColor="@color/white"
+                android:textColorHint="@color/colorHint">
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/etName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Name"
-                    android:textColor="#363a43"
-                    android:textColorHint="#7a8089" />
+                    android:hint="@string/name"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/colorHint" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnStart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Start"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
+                android:layout_marginTop="@dimen/standardMargin"
+                android:background="@drawable/start_button_back"
+                android:text="@string/start"
+                android:textColor="@color/white"
+                android:textSize="@dimen/standardSize" />
 
         </LinearLayout>
 

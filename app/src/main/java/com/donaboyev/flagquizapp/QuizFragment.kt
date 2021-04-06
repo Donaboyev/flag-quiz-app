@@ -30,11 +30,8 @@ class QuizFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentQuizBinding.inflate(inflater, container, false)
-
         mQuestionList = Util.getRandomQuestions(requireContext())
-
         setQuestion()
-
         binding.tvOptionOne.setOnClickListener(this)
         binding.tvOptionTwo.setOnClickListener(this)
         binding.tvOptionThree.setOnClickListener(this)
@@ -51,15 +48,10 @@ class QuizFragment : Fragment(), View.OnClickListener {
     private fun setQuestion() {
         val question = mQuestionList!![mCurrentPosition - 1]
         defaultOptionsView()
-
-        if (mCurrentPosition == mQuestionList!!.size) {
-            binding.btnSubmit.text = "Finish"
-        } else {
-            binding.btnSubmit.text = "Submit"
-        }
+        if (mCurrentPosition == mQuestionList!!.size) binding.btnSubmit.text = "Finish"
+        else binding.btnSubmit.text = "Submit"
         binding.progressBar.progress = mCurrentPosition
         binding.tvProgress.text = "$mCurrentPosition" + "/" + binding.progressBar.max
-
         binding.ivImage.setImageResource(question.image)
         binding.tvOptionOne.text = question.optionOne
         binding.tvOptionTwo.text = question.optionTwo
@@ -73,7 +65,6 @@ class QuizFragment : Fragment(), View.OnClickListener {
         options.add(1, binding.tvOptionTwo)
         options.add(2, binding.tvOptionThree)
         options.add(3, binding.tvOptionFour)
-
         for (option in options) {
             option.setTextColor(Color.parseColor("#7a8089"))
             option.typeface = Typeface.DEFAULT
@@ -84,24 +75,15 @@ class QuizFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    override fun onClick(p0: View?) {
-        when (p0?.id) {
-            R.id.tvOptionOne -> {
-                selectedOptionView(binding.tvOptionOne, 1)
-            }
-            R.id.tvOptionTwo -> {
-                selectedOptionView(binding.tvOptionTwo, 2)
-            }
-            R.id.tvOptionThree -> {
-                selectedOptionView(binding.tvOptionThree, 3)
-            }
-            R.id.tvOptionFour -> {
-                selectedOptionView(binding.tvOptionFour, 4)
-            }
+    override fun onClick(view: View?) {
+        when (view?.id) {
+            R.id.tvOptionOne -> selectedOptionView(binding.tvOptionOne, 1)
+            R.id.tvOptionTwo -> selectedOptionView(binding.tvOptionTwo, 2)
+            R.id.tvOptionThree -> selectedOptionView(binding.tvOptionThree, 3)
+            R.id.tvOptionFour -> selectedOptionView(binding.tvOptionFour, 4)
             R.id.btnSubmit -> {
                 if (mSelectedOptionPosition == 0) {
                     mCurrentPosition++
-
                     when {
                         mCurrentPosition <= mQuestionList!!.size -> {
                             setQuestion()
@@ -118,19 +100,15 @@ class QuizFragment : Fragment(), View.OnClickListener {
                     }
                 } else {
                     val question = mQuestionList?.get(mCurrentPosition - 1)
-                    if (question!!.correctAnswer != mSelectedOptionPosition) {
-                        answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
-                    } else {
-                        mCorrectAnswer++
-                    }
+                    if (question!!.correctAnswer != mSelectedOptionPosition) answerView(
+                        mSelectedOptionPosition,
+                        R.drawable.wrong_option_border_bg
+                    )
+                    else mCorrectAnswer++
                     answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
                 }
-
-                if (mCurrentPosition == mQuestionList!!.size) {
-                    binding.btnSubmit.text = "Finish"
-                } else {
-                    binding.btnSubmit.text = "Go to next question"
-                }
+                if (mCurrentPosition == mQuestionList!!.size) binding.btnSubmit.text = "Finish"
+                else binding.btnSubmit.text = "Go to next question"
                 mSelectedOptionPosition = 0
             }
         }
@@ -138,22 +116,14 @@ class QuizFragment : Fragment(), View.OnClickListener {
 
     private fun answerView(answer: Int, drawableView: Int) {
         when (answer) {
-            1 -> {
-                binding.tvOptionOne.background =
-                    ContextCompat.getDrawable(requireContext(), drawableView)
-            }
-            2 -> {
-                binding.tvOptionTwo.background =
-                    ContextCompat.getDrawable(requireContext(), drawableView)
-            }
-            3 -> {
-                binding.tvOptionThree.background =
-                    ContextCompat.getDrawable(requireContext(), drawableView)
-            }
-            4 -> {
-                binding.tvOptionFour.background =
-                    ContextCompat.getDrawable(requireContext(), drawableView)
-            }
+            1 -> binding.tvOptionOne.background =
+                ContextCompat.getDrawable(requireContext(), drawableView)
+            2 -> binding.tvOptionTwo.background =
+                ContextCompat.getDrawable(requireContext(), drawableView)
+            3 -> binding.tvOptionThree.background =
+                ContextCompat.getDrawable(requireContext(), drawableView)
+            4 -> binding.tvOptionFour.background =
+                ContextCompat.getDrawable(requireContext(), drawableView)
         }
     }
 

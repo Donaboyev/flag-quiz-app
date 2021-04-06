@@ -255,4 +255,14 @@
     <string name="ZA">South</string>
     <string name="ZM">Zambia</string>
     <string name="ZW">Zimbabwe</string>
+    <string name="flags_quiz">Flags Quiz</string>
+    <string name="welcome">Welcome</string>
+    <string name="please_enter_your_name">Please enter your name</string>
+    <string name="name">Name</string>
+    <string name="start">Start</string>
+    <string name="what_country_does_this_flag_belong_to">What country does this flag belong to?</string>
+    <string name="submit">Submit</string>
+    <string name="result">Result</string>
+    <string name="hey_congratulations">Hey, Congratulations!</string>
+    <string name="finish">Finish</string>
 </resources>

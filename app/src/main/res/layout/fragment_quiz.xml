@@ -10,32 +10,32 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorMainBack"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="@dimen/standardMargin">
 
         <TextView
             android:id="@+id/tvQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:gravity="center"
-            android:text="What country does this flag belong to?"
-            android:textColor="#363a43"
-            android:textSize="22sp" />
+            android:text="@string/what_country_does_this_flag_belong_to"
+            android:textColor="@color/white"
+            android:textSize="@dimen/standardSize" />
 
         <ImageView
             android:id="@+id/ivImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/ic_flag_of_argentina" />
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimenHundred"
+            android:layout_marginTop="@dimen/standardMargin"
+            android:src="@drawable/uz" />
 
         <LinearLayout
             android:id="@+id/llProgressDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/standardMargin"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -47,7 +47,6 @@
                 android:layout_weight="1"
                 android:indeterminate="false"
                 android:max="10"
-                android:minHeight="50dp"
                 android:progress="0" />
 
             <TextView
@@ -55,9 +54,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="15dp"
-                android:textColorHint="#7a8089"
-                android:textSize="14sp"
+                android:padding="@dimen/standardMargin"
+                android:textColor="@color/white"
+                android:textColorHint="@color/colorHint"
+                android:textSize="@dimen/standardSize"
                 tools:text="0/10" />
 
         </LinearLayout>
@@ -66,58 +66,59 @@
             android:id="@+id/tvOptionOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/standardMargin"
             android:background="@drawable/default_option_border_bg"
             android:gravity="center"
-            android:padding="15dp"
-            android:textColor="#7a8089"
-            android:textSize="18sp"
+            android:padding="@dimen/standardMargin"
+            android:textColor="@color/colorCardBack"
+            android:textSize="@dimen/standardSize"
             tools:text="Apple" />
 
         <TextView
             android:id="@+id/tvOptionTwo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/standardMargin"
             android:background="@drawable/default_option_border_bg"
             android:gravity="center"
-            android:padding="15dp"
-            android:textColor="#7a8089"
-            android:textSize="18sp"
+            android:padding="@dimen/standardMargin"
+            android:textColor="@color/colorCardBack"
+            android:textSize="@dimen/standardSize"
             tools:text="Google" />
 
         <TextView
             android:id="@+id/tvOptionThree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/standardMargin"
             android:background="@drawable/default_option_border_bg"
             android:gravity="center"
-            android:padding="15dp"
-            android:textColor="#7a8089"
-            android:textSize="18sp"
+            android:padding="@dimen/standardMargin"
+            android:textColor="@color/colorCardBack"
+            android:textSize="@dimen/standardSize"
             tools:text="Android Inc." />
 
         <TextView
             android:id="@+id/tvOptionFour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/standardMargin"
             android:background="@drawable/default_option_border_bg"
             android:gravity="center"
-            android:padding="15dp"
-            android:textColor="#7a8089"
-            android:textSize="18sp"
+            android:padding="@dimen/standardMargin"
+            android:textColor="@color/colorCardBack"
+            android:textSize="@dimen/standardSize"
             tools:text="Nokia" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSubmit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Submit"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
+            android:layout_margin="@dimen/standardMargin"
+            android:background="@drawable/start_button_back"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/standardSize"
             android:textStyle="bold" />
 
     </LinearLayout>

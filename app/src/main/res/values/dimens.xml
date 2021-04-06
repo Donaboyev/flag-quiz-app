@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marginFromCard">30dp</dimen>
+    <dimen name="textAppName">25sp</dimen>
+    <dimen name="standardMargin">16dp</dimen>
+    <dimen name="cornerDimen">6dp</dimen>
+    <dimen name="standardSize">16sp</dimen>
+    <dimen name="dimenHundred">100dp</dimen>
+    <dimen name="bigSize">25sp</dimen>
+</resources>
