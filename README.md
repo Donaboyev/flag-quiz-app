@@ -7,4 +7,4 @@ A simple flags quiz application. You can check your knowledge about flags. A sim
 
 [Demo video with fully functionality](https://youtu.be/pBY4IEZTZlQ "On Youtube")
 
-Inspired and followed by [this](https://www.youtube.com/watch?v=b21fiIyOW4A "On Youtube)
+Inspired and followed by [this](https://www.youtube.com/watch?v=b21fiIyOW4A)
