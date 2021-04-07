@@ -1,5 +1,5 @@
 # Simple Flags Quiz App
-A simple flags quiz application. You can check your knowledge about flags. A simple determinant calculator app.
+A simple flags quiz application. You can check your knowledge about flags. 
 
 
 ## Here is a demo
