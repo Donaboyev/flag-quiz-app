@@ -1,5 +1,6 @@
 package com.donaboyev.flagquizapp
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -45,6 +46,7 @@ class QuizFragment : Fragment(), View.OnClickListener {
         _binding = null
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setQuestion() {
         val question = mQuestionList!![mCurrentPosition - 1]
         defaultOptionsView()
@@ -75,6 +77,7 @@ class QuizFragment : Fragment(), View.OnClickListener {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.tvOptionOne -> selectedOptionView(binding.tvOptionOne, 1)
@@ -130,7 +133,7 @@ class QuizFragment : Fragment(), View.OnClickListener {
     private fun selectedOptionView(tv: TextView, selectedOptionNum: Int) {
         defaultOptionsView()
         mSelectedOptionPosition = selectedOptionNum
-        tv.setTextColor(Color.parseColor("#363a43"))
+        tv.setTextColor(Color.parseColor("#363A43"))
         tv.setTypeface(tv.typeface, Typeface.BOLD)
         tv.background = ContextCompat.getDrawable(
             requireContext(),

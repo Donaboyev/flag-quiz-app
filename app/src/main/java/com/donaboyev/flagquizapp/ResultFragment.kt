@@ -1,5 +1,6 @@
 package com.donaboyev.flagquizapp
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,7 @@ class ResultFragment : Fragment() {
         get() = _binding!!
     private val args: ResultFragmentArgs by navArgs()
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
